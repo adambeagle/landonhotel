@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>{% block title_outer %}{% block title %}{% endblock title %} | {% endblock  title_outer %}The Landon Hotel</title>
+    <meta charset="utf-8">
+    
+    <link rel="shortcut icon" href="{{ site_url }}favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ site_url }}favicon.ico" type="image/x-icon">
+    <!-- remove when assets working -->
+    <link href="{{ site_url }}static/css/style.css" rel="stylesheet">
+    
+    {#
+    {% assets filters="libsass", output="css/style.min.css", "css/style.scss" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+    {% endassets %}
+    #}
+</head>
+    
+<body class="{% block bodyclass %}{% endblock %}">
+  <div class="container">
+    <header>
+      <div class="topbar">
+        <img src="{{ site_url }}static/images/ui/header.png" alt="header" usemap="#logomap">
+      </div>
+      <div class="header-img" role="banner">
+        <img src="{{ site_url }}static/images/ui/banners/{% block header_img_filename %}{% endblock %}" alt="Banner image">
+      </div>
+    </header>
+    
+    <!-- Make only logo part of topbar image linked -->
+    <map name="logomap">
+        <area shape="rect" coords="7, 6, 192, 79" href="{{ site_url }}" alt="Home">
+    </map>
+
+    <nav role="navigation">
+      <ul>
+        <li><a href="{{ site_url }}">Home</a></li>
+        <li><a href="{{ site_url }}roomservice/">Room Service</a></li>
+        <li><a href="{{ site_url }}specials/">Specials</a></li>
+        <li><a href="{{ site_url }}reservations/">Reservations</a></li>
+        <li><a href="{{ site_url }}meetings-and-events/">Meetings and Events</a></li>
+        <li><a href="{{ site_url }}news/">News</a></li>
+        <li><a href="{{ site_url }}contact/">Contact</a></li>
+      </ul>
+    </nav>
+    
+    {% block premain %}{% endblock %}
+
+    <main class="{% block mainclass %}{% endblock %}">
+	{% block main %}{% endblock %}
+    </main>
+    
+    <footer role="contentinfo">
+      Copyright &copy; The Landon Hotel 2018
+    </footer>
+  </div>
+  {% block body_end %}{% endblock %}
+</body>
+</html>

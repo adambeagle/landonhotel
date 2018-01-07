@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Reservations{% endblock %}
+
+{% block header_img_filename%}London.jpg{% endblock %}
+
+{% block mainclass %}reservations{% endblock %}
+
+{% block main %}
+<h1>Reservations</h1>
+
+<div class="subheading">Tell us when you'll be here!</div>
+
+<p>Let us know when you plan to visit!</p>
+
+<form name="reservation">
+  <div class="input-group row">
+    <label>First Name<small>*</small></label>
+    <input type="text" name="fname" required>
+  </div>
+  
+  <div class="input-group row">
+    <label>Last Name<small>*</small></label>
+    <input type="text" name="lname" required>
+  </div>
+  
+  <div class="input-group row">
+    <label>Email<small>*</small></label>
+    <input type="email" name="email" required>
+  </div>
+  
+  <div class="input-group">
+    <label>Details of your visit</label>
+    <textarea name="details"></textarea>
+  </div>
+  
+  <button type="submit">Send</button>
+</form>
+{% endblock main %}

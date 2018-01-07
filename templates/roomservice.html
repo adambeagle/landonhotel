@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Room Service{% endblock %}
+
+{% block bodyclass %}roomservice{% endblock %}
+
+{% block header_img_filename%}Paris-2.jpg{% endblock %}
+
+{% block main %}
+
+<section>
+  <div>
+    <h1>Room Service</h1>
+    
+    <p>
+      No matter what you're craving, <strong>Restaurant to Room</strong> has you covered. Our fast and friendly delivery service brings you hot, fresh food, from a diverse choice of local restaurants.
+    </p>
+
+    <ul>
+      <li>
+        <a href="#" class="restaurant-option">Dinner Destiny</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Eat Your Veggies Caf&eacute;</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Food Rendevous</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Jeffrey's on the Square</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Legume Palace</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Pickles &amp; Pepperoni Deli</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Picky Palate</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Simply Safe</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Supreme &amp; Fancy Pizza</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Totally Fishy</a>
+      </li>
+    </ul>
+
+    <p>Simply fill out the online form below, and we'll have food delivered directly to your room, within an hour, or your meal is free. The only difficult part is choosing. (Sorry, we can't help you with that.)</p>
+  </div>
+  
+  <img src="{{ site_url }}static/images/ui/restaurant-to-room_web.png">
+</section>
+
+<form name="roomservice">
+  <div class="input-group row">
+    <label>Restaurant Preference</label>
+    <select name="restaurant-preference" id="restaurant-select">
+
+    </select>
+  </div>
+
+  <div class="input-group row">
+    <label>Name</label>
+    <input type="text" name="customer-name">
+  </div>
+
+  <div class="input-group row">
+    <label>Room Number</label>
+    <input type="number" name="room-number" min="101" max="999">
+  </div>  
+
+  <div class="input-group row">
+    <label>Delivery Time</label>
+    <input type="time" name="delivery-time">
+  </div>
+
+  <div class="input-group row">
+    <label>Phone</label>
+    <input name="phone" type="tel">
+  </div>
+
+  <div class="input-group row">
+    <label>Email</label>
+    <input type="email" name="email">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+{% endblock main %}
+
+{% block body_end %}
+<script>
+    // Populate <select> in form with restaurant options from list
+    var restaurants = document.getElementsByClassName('restaurant-option'),
+        select = document.getElementById('restaurant-select');
+    
+    for (const restaurant of restaurants) {
+        var option = select.appendChild(document.createElement('option'));
+        
+        option.innerHTML = restaurant.textContent;
+    }
+</script>
+{% endblock %}

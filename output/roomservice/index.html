@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Room Service | The Landon Hotel</title>
+    <meta charset="utf-8">
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- remove when assets working -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    
+</head>
+    
+<body class="roomservice">
+  <div class="container">
+    <header>
+      <div class="topbar">
+        <img src="/static/images/ui/header.png" alt="header" usemap="#logomap">
+      </div>
+      <div class="header-img" role="banner">
+        <img src="/static/images/ui/banners/Paris-2.jpg" alt="Banner image">
+      </div>
+    </header>
+    
+    <!-- Make only logo part of topbar image linked -->
+    <map name="logomap">
+        <area shape="rect" coords="7, 6, 192, 79" href="/" alt="Home">
+    </map>
+
+    <nav role="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/roomservice/">Room Service</a></li>
+        <li><a href="/specials/">Specials</a></li>
+        <li><a href="/reservations/">Reservations</a></li>
+        <li><a href="/meetings-and-events/">Meetings and Events</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    
+    
+
+    <main class="">
+	
+
+<section>
+  <div>
+    <h1>Room Service</h1>
+    
+    <p>
+      No matter what you're craving, <strong>Restaurant to Room</strong> has you covered. Our fast and friendly delivery service brings you hot, fresh food, from a diverse choice of local restaurants.
+    </p>
+
+    <ul>
+      <li>
+        <a href="#" class="restaurant-option">Dinner Destiny</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Eat Your Veggies Caf&eacute;</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Food Rendevous</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Jeffrey's on the Square</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Legume Palace</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Pickles &amp; Pepperoni Deli</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Picky Palate</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Simply Safe</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Supreme &amp; Fancy Pizza</a>
+      </li>
+      <li>
+        <a href="#" class="restaurant-option">Totally Fishy</a>
+      </li>
+    </ul>
+
+    <p>Simply fill out the online form below, and we'll have food delivered directly to your room, within an hour, or your meal is free. The only difficult part is choosing. (Sorry, we can't help you with that.)</p>
+  </div>
+  
+  <img src="/static/images/ui/restaurant-to-room_web.png">
+</section>
+
+<form name="roomservice">
+  <div class="input-group row">
+    <label>Restaurant Preference</label>
+    <select name="restaurant-preference" id="restaurant-select">
+
+    </select>
+  </div>
+
+  <div class="input-group row">
+    <label>Name</label>
+    <input type="text" name="customer-name">
+  </div>
+
+  <div class="input-group row">
+    <label>Room Number</label>
+    <input type="number" name="room-number" min="101" max="999">
+  </div>  
+
+  <div class="input-group row">
+    <label>Delivery Time</label>
+    <input type="time" name="delivery-time">
+  </div>
+
+  <div class="input-group row">
+    <label>Phone</label>
+    <input name="phone" type="tel">
+  </div>
+
+  <div class="input-group row">
+    <label>Email</label>
+    <input type="email" name="email">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+    </main>
+    
+    <footer role="contentinfo">
+      Copyright &copy; The Landon Hotel 2018
+    </footer>
+  </div>
+  
+<script>
+    // Populate <select> in form with restaurant options from list
+    var restaurants = document.getElementsByClassName('restaurant-option'),
+        select = document.getElementById('restaurant-select');
+    
+    for (const restaurant of restaurants) {
+        var option = select.appendChild(document.createElement('option'));
+        
+        option.innerHTML = restaurant.textContent;
+    }
+</script>
+
+</body>
+</html>

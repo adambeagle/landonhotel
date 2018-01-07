@@ -1,0 +1,47 @@
+#!/bin/bash
+# Starts Django development server at address visible to LAN.
+# Runserver will print this address when it starts.
+# If using VM, may have to bridge connection for this to work.
+#
+# Default port is 8000; a different port can be specified with the -p option.
+
+usage() {
+    echo "Usage: $0 [-p port] [-u urls] [-d root]" >&2
+    exit 1
+}
+
+PORT=8000
+URLS=""
+ROOT="output"
+
+while getopts ":p:u:d:" opt; do
+    case $opt in
+        p|P)
+            PORT="$OPTARG"
+            ;;
+        u|U)
+            URLS="$OPTARG"
+            ;;
+        d|D)
+            ROOT="$OPTARG"
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            usage
+            ;;
+        :)
+            echo "Option -$OPTARG requires an argument." >&2
+            usage
+            ;;
+    esac
+done
+
+# If URLS is unset or empty string, ignore it
+if [ -z "${URLS}" ]; then
+    python landonhotel.py
+else
+    python landonhotel.py -u "$URLS"
+fi
+
+cd $ROOT
+python -m http.server "$PORT"

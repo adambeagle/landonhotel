@@ -1,0 +1,5 @@
+__pycache__
+*.pyc
+static/images
+output/static/images
+*.scss
