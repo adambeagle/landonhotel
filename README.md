@@ -16,7 +16,9 @@ The `output` folder includes the output site as per the previous run of `landonh
 
 ## Requirements
 
-Requires the [simplesite repository](https://github.com/adambeagle/simplesite) available from my user page.
+* Python >3.4
+
+* The [simplesite repository](https://github.com/adambeagle/simplesite) available from my user page.
 
 ## Usage
 
