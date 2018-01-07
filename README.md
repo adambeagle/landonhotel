@@ -17,3 +17,9 @@ The `output` folder includes the output site as per the previous run of `landonh
 ## Requirements
 
 Requires the [simplesite repository](https://github.com/adambeagle/simplesite) available from my user page.
+
+## Usage
+
+To generate and write the site, use `python landonhotel.py`. Absolute vs. relative URLs can be controlled with the `-u` argument.
+
+To run a local server, use `./runserver`.
