@@ -1,9 +1,11 @@
 #!/bin/bash
-# Starts Django development server at address visible to LAN.
-# Runserver will print this address when it starts.
-# If using VM, may have to bridge connection for this to work.
+# Generate the site with landonhotel.py, then run a python.http server at localhost:8000
 #
 # Default port is 8000; a different port can be specified with the -p option.
+#
+# Root of server assumed to be 'output/'. Change with the -d option.
+#
+# Change url setting with -u option (see landonhotel.py)
 
 usage() {
     echo "Usage: $0 [-p port] [-u urls] [-d root]" >&2
