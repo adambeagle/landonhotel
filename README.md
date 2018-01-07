@@ -6,7 +6,7 @@
 
 This project serves as an example usage of the [simplesite repository](https://github.com/adambeagle/simplesite). It is a website for a fictional hotel.
 
-The assets and inspriration for the website come from a Palm Beach Code School assignment. As such, the image assets are not provided in this repository, so the site will not look as intended if generated from this repository alone. The hosted final product site can be viewed at [pbcs.us/~abeagle/projects/landonhotel/](pbcs.us/~abeagle/projects/landonhotel/)
+The assets and inspriration for the website come from a Palm Beach Code School assignment. As such, the image assets are not provided in this repository, so the site will not look as intended if generated from this repository alone. The hosted final product site can be viewed at [pbcs.us/~abeagle/projects/landonhotel/](http://pbcs.us/~abeagle/projects/landonhotel/)
 
 The `landonhotel.py` file demonstrates the use of `simplesite`, as well as a possible scheme for handling differing URL types for production vs. development environments.
 
