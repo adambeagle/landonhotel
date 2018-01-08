@@ -1,5 +1,8 @@
 #!/bin/bash
-# Generate the site with landonhotel.py, then run a python.http server at localhost:8000
+# Generate the site with landonhotel.py, then run a python http.server at 
+# address visible to LAN. This address will be printed by http.server on start.
+#
+# If using VM, may have to bridge connection for this to work.
 #
 # Default port is 8000; a different port can be specified with the -p option.
 #
@@ -45,5 +48,8 @@ else
     python landonhotel.py -u "$URLS"
 fi
 
+# Bind to address visible on LAN, if possible
+INET="$(ifconfig ens33 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')"
+
 cd $ROOT
-python -m http.server "$PORT"
+python -m http.server "$PORT" --bind "$INET"
