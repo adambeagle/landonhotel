@@ -16,12 +16,11 @@ The `output` folder includes the output site as per the previous run of `landonh
 
 ## Requirements
 
-* Python >3.4
-
-* The [simplesite repository](https://github.com/adambeagle/simplesite) available from my user page.
+* python 3.2+
+* `simplesite` package (see Getting Started below for installation instructions) and its dependencies
 
 ## Usage
 
-To generate and write the site, use `python landonhotel.py`. Absolute vs. relative URLs can be controlled with the `-u` argument.
+This repository does not include the assets necessary to actually build the site, so it is not advised to clone the repo and try to build the site as-is. It is instead intended for the source and templates to be examined for demonstration purposes.
 
-To run a local server, use `./runserver`.
+For a fully working example site and `simplesite` template, as well as a detailed description of the command line options available to `landonhotel.py`, please see the [`simplesite-example` repo](https://github.com/adambeagle/simplesite-example).
